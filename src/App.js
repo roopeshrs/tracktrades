@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header";
+import SecondaryHeader from "./components/SecondaryHeader";
+import Table from "./components/Table";
 
 function App() {
+  const [isBasketOpen, setIsBasketOpen] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <SecondaryHeader setIsBasketOpen={setIsBasketOpen} />
+      <Table isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} />
+      {/**
+        Header
+          - Logo
+          - menu
+            - menu1
+            - menu2
+          - avatar section
+        Filter
+          - div
+            - 2 MUI inputs
+          - div
+            - div
+            - div
+          - div
+            - Filter
+            - Basket
+        Div
+         - 2 buttons
+        Table
+    */}
     </div>
+  
   );
 }
 
